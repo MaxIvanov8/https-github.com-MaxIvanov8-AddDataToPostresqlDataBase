@@ -1,0 +1,56 @@
+﻿<Window x:Class="TestProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:TestProject"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="170" Width="320" ResizeMode="NoResize">
+    <Window.Resources>
+        <local:RBConverter x:Key="rbConverter" />
+    </Window.Resources>
+    <Grid DataContext="{Binding Selected}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="136"/>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="136"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Column="1" Grid.Row="1"  Margin="0,0,0,1">
+            <TextBlock Text="Фамилия: " Width="auto" VerticalAlignment="Center"/>
+            <TextBox x:Name="TBSurname" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
+            </WrapPanel>
+        <WrapPanel Grid.Column="1" Grid.Row="2"  Margin="0,2,0,1">
+            <TextBlock Text="Имя:         " Width="auto" VerticalAlignment="Center"/>
+            <TextBox x:Name="TBFirstname" Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
+            </WrapPanel>
+        <WrapPanel Grid.Column="1" Grid.Row="3"  Margin="0,2,0,1" >
+            <TextBlock Text="Отчество: " Width="auto" VerticalAlignment="Center"/>
+            <TextBox x:Name="TBSecondname" Text="{Binding  Secondname, UpdateSourceTrigger=PropertyChanged}" Width="79"/>
+        </WrapPanel>
+        <WrapPanel Grid.Column="3" Grid.Row="1" Margin="2,0,0,1">
+                <TextBlock Text="Дата: " Width="auto" VerticalAlignment="Center"/>
+                <DatePicker x:Name="DPDate" DisplayDateEnd="{x:Static sys:DateTime.Now}" SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}" Width="102"/>
+            </WrapPanel>
+        <WrapPanel  Grid.Column="3" Grid.Row="2" Margin="2,2,0,1">
+            <TextBlock Text="Пол:  " Width="auto" VerticalAlignment="Center"/>
+                <RadioButton x:Name="RBM" IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=rbConverter}, ConverterParameter=M}" Content="М" />
+                <RadioButton x:Name="RBF" IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=rbConverter}, ConverterParameter=Ж}" Content="Ж" Margin="5,0,0,0" />
+            </WrapPanel>
+        <WrapPanel Grid.Column="3" Grid.Row="3" Margin="2,2,0,1">
+            <TextBlock Text="Адрес: " Width="auto" VerticalAlignment="Center"/>
+            <TextBox x:Name="TBAdress" Text="{Binding Adress, UpdateSourceTrigger=PropertyChanged}" Width="94"/>
+        </WrapPanel>
+        <Button x:Name="Btn" Content="Добавить" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4" Click="Btn_Click" Width="85" Margin="5" />
+    </Grid>
+</Window>
