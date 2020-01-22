@@ -47,7 +47,7 @@ namespace TestProject
 
         private void BtnDel_Click(object sender, RoutedEventArgs e)
         {
-
+            ((DataVM)DataContext).Delete(_tableName);
         }
     }
 }

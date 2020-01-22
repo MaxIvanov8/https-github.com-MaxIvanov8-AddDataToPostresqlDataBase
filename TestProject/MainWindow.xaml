@@ -6,7 +6,7 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:TestProject"
         mc:Ignorable="d"
-        Title="TestProject" Height="175" Width="320" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Res\Icon.png">
+        Title="TestProject" Height="170" Width="320" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Res\icon.ico">
     <Window.Resources>
         <local:RBConverter x:Key="rbConverter" />
     </Window.Resources>
@@ -22,7 +22,7 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="15"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
@@ -52,7 +52,7 @@
             </WrapPanel>
         <WrapPanel Grid.Column="3" Grid.Row="3" Margin="2,2,0,1">
             <TextBlock Text="Adress: " Width="auto" VerticalAlignment="Center"/>
-            <TextBox x:Name="TBAdress" Text="{Binding Adress, UpdateSourceTrigger=PropertyChanged}" Width="94"/>
+            <TextBox x:Name="TBAdress" Text="{Binding Adress, UpdateSourceTrigger=PropertyChanged}" Width="90"/>
         </WrapPanel>
         <Button x:Name="BtnAdd" Content="Add" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Click="BtnAdd_Click" Width="85" Margin="5" />
         <Button x:Name="BtnDel" Content="Delete" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="4" Click="BtnDel_Click" Width="85" Margin="5" />

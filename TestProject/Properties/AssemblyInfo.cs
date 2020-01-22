@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TestProject")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Adding and deleting data from PostgreSQL with MVVM pattern")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("MaxIvanov")]
 [assembly: AssemblyProduct("TestProject")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]

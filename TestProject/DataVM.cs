@@ -30,7 +30,7 @@ namespace TestProject
         {
             if (CheckDate())
             {
-                var cmd = new NpgsqlCommand(@"INSERT INTO " + name + "(surname, firstname, secondname, date, gender, adress) VALUES(" + ToValues() + ");", _con);
+                var cmd = new NpgsqlCommand("INSERT INTO " + name + "(surname, firstname, secondname, date, gender, adress) VALUES(" + ToAddValues() + ");", _con);
                 cmd.ExecuteNonQuery();
                 Selected = new Data();
                 return true;
@@ -38,7 +38,19 @@ namespace TestProject
             return false;
         }
 
-        private string ToValues()
+        public void Delete(string name)
+        {
+            var cmd = new NpgsqlCommand("DELETE FROM " + name + " WHERE " + ToDelValues() + ";", _con);
+            cmd.ExecuteNonQuery();
+            Selected = new Data();
+        }
+
+        private string ToDelValues()
+        {
+            return string.Format("surname='{0}' and firstname='{1}' and secondname='{2}' and date='{3}' and gender='{4}' and adress='{5}'", _selected.Surname, _selected.Firstname, _selected.Secondname, _selected.Date.ToShortDateString(), _selected.Gender, _selected.Adress);
+        }
+
+        private string ToAddValues()
         {
             return string.Format("'{0}','{1}','{2}','{3}','{4}','{5}'",_selected.Surname, _selected.Firstname, _selected.Secondname, _selected.Date.ToShortDateString(), _selected.Gender, _selected.Adress);
         }
