@@ -40,9 +40,14 @@ namespace TestProject
             con.Close();
         }
 
-        private void Btn_Click(object sender, RoutedEventArgs e)
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
             if(!((DataVM)DataContext).Add(_tableName)) MessageBox.Show("Заполните все поля", "Программное сообщение");
+        }
+
+        private void BtnDel_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
