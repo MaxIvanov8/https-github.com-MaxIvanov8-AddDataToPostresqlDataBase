@@ -27,7 +27,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <WrapPanel Grid.Column="1" Grid.Row="1"  Margin="0,0,0,1">
-            <TextBlock Text="Фамилия: " Width="auto" VerticalAlignment="Center"/>
+            <TextBlock Text="Surname: " Width="auto" VerticalAlignment="Center"/>
             <TextBox x:Name="TBSurname" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
             </WrapPanel>
         <WrapPanel Grid.Column="1" Grid.Row="2"  Margin="0,2,0,1">
