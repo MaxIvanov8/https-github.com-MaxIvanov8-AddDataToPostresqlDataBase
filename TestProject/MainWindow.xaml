@@ -6,11 +6,14 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xmlns:local="clr-namespace:TestProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="170" Width="320" ResizeMode="NoResize">
+        Title="TestProject" Height="175" Width="320" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Res\Icon.png">
     <Window.Resources>
         <local:RBConverter x:Key="rbConverter" />
     </Window.Resources>
     <Grid DataContext="{Binding Selected}">
+        <Grid.Background>
+            <ImageBrush ImageSource="Res/background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="136"/>
