@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TestProject")]
+[assembly: AssemblyTitle("AddDataToPostresqlDB")]
 [assembly: AssemblyDescription("Adding and deleting data from PostgreSQL with MVVM pattern")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MaxIvanov")]
-[assembly: AssemblyProduct("TestProject")]
+[assembly: AssemblyProduct("AddDataToPostresqlDB")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
