@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace TestProject
 {
-    class RBConverter : IValueConverter
+    internal class RbConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

@@ -1,12 +1,12 @@
-﻿using System.Windows;
-using Npgsql;
+﻿using Npgsql;
+using System.Windows;
 
 namespace TestProject
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow 
     {
         private string _pass = "Server=localhost;Port=5432;User Id=postgres;Password=admin;";
         private string _dataBaseName = "testdb";
@@ -27,7 +27,10 @@ namespace TestProject
             {
                 createdb.ExecuteNonQuery();
             }
-            catch { }
+            catch
+            {
+                return;
+            }
             con.Close();
             con = new NpgsqlConnection(_pass + "Database=" + _dataBaseName);
             var createtbl = new NpgsqlCommand(@"CREATE TABLE " + _tableName + "(id SERIAL PRIMARY KEY, surname VARCHAR(20), firstname VARCHAR(20), secondname VARCHAR(20), date TIMESTAMP, gender VARCHAR(1), adress VARCHAR(50));", con);
@@ -36,7 +39,10 @@ namespace TestProject
             {
                 createtbl.ExecuteNonQuery();
             }
-            catch { }
+            catch
+            {
+                return;
+            }
             con.Close();
         }
 

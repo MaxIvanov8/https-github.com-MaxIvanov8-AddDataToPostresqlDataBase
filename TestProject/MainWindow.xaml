@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="TestProject" Height="170" Width="320" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Res\icon.ico">
     <Window.Resources>
-        <local:RBConverter x:Key="rbConverter" />
+        <local:RbConverter x:Key="RbConverter" />
     </Window.Resources>
     <Grid DataContext="{Binding Selected}">
         <Grid.Background>
@@ -31,30 +31,30 @@
         </Grid.RowDefinitions>
         <WrapPanel Grid.Column="1" Grid.Row="1"  Margin="0,0,0,1">
             <TextBlock Text="Surname: " Width="auto" VerticalAlignment="Center"/>
-            <TextBox x:Name="TBSurname" Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
+            <TextBox Text="{Binding Surname, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
             </WrapPanel>
         <WrapPanel Grid.Column="1" Grid.Row="2"  Margin="0,2,0,1">
             <TextBlock Text="Name:      " Width="auto" VerticalAlignment="Center"/>
-            <TextBox x:Name="TBFirstname" Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
+            <TextBox Text="{Binding Firstname, UpdateSourceTrigger=PropertyChanged}" Width="80"/>
             </WrapPanel>
         <WrapPanel Grid.Column="1" Grid.Row="3"  Margin="0,2,0,1" >
             <TextBlock Text="Secondname: " Width="auto" VerticalAlignment="Center"/>
-            <TextBox x:Name="TBSecondname" Text="{Binding  Secondname, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+            <TextBox Text="{Binding  Secondname, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
         </WrapPanel>
         <WrapPanel Grid.Column="3" Grid.Row="1" Margin="2,0,0,1">
                 <TextBlock Text="Date: " Width="auto" VerticalAlignment="Center"/>
-                <DatePicker x:Name="DPDate" DisplayDateEnd="{x:Static sys:DateTime.Now}" SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}" Width="102"/>
+                <DatePicker DisplayDateEnd="{x:Static sys:DateTime.Now}" SelectedDate="{Binding Date, UpdateSourceTrigger=PropertyChanged}" Width="102"/>
             </WrapPanel>
         <WrapPanel  Grid.Column="3" Grid.Row="2" Margin="2,2,0,1" VerticalAlignment="Center">
             <TextBlock Text="Gender:  " Width="auto" />
-                <RadioButton x:Name="RBM" IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=rbConverter}, ConverterParameter=M}" Content="M" />
-                <RadioButton x:Name="RBF" IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=rbConverter}, ConverterParameter=F}" Content="F" Margin="5,0,0,0" />
+                <RadioButton IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=RbConverter}, ConverterParameter=M}" Content="M" />
+                <RadioButton IsChecked="{Binding Gender, Converter={StaticResource ResourceKey=RbConverter}, ConverterParameter=F}" Content="F" Margin="5,0,0,0" />
             </WrapPanel>
         <WrapPanel Grid.Column="3" Grid.Row="3" Margin="2,2,0,1">
             <TextBlock Text="Adress: " Width="auto" VerticalAlignment="Center"/>
-            <TextBox x:Name="TBAdress" Text="{Binding Adress, UpdateSourceTrigger=PropertyChanged}" Width="90"/>
+            <TextBox Text="{Binding Adress, UpdateSourceTrigger=PropertyChanged}" Width="90"/>
         </WrapPanel>
-        <Button x:Name="BtnAdd" Content="Add" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Click="BtnAdd_Click" Width="85" Margin="5" />
-        <Button x:Name="BtnDel" Content="Delete" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="4" Click="BtnDel_Click" Width="85" Margin="5" />
+        <Button Content="Add" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Click="BtnAdd_Click" Width="85" Margin="5" />
+        <Button Content="Delete" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="4" Click="BtnDel_Click" Width="85" Margin="5" />
     </Grid>
 </Window>

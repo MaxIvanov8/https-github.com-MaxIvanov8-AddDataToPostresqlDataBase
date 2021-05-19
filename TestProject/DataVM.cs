@@ -8,7 +8,7 @@ namespace TestProject
     {
         private Data _selected = new Data();
         
-        public NpgsqlConnection _con;
+        private readonly NpgsqlConnection _con;
 
         public DataVM(string adr)
         {
@@ -18,11 +18,11 @@ namespace TestProject
 
         public Data Selected
         {
-            get { return _selected; }
+            get => _selected;
             set
             {
                 _selected = value;
-                OnPropertyChanged("Selected");
+                OnPropertyChanged();
             }
         }
 
@@ -47,17 +47,19 @@ namespace TestProject
 
         private string ToDelValues()
         {
-            return string.Format("surname='{0}' and firstname='{1}' and secondname='{2}' and date='{3}' and gender='{4}' and adress='{5}'", _selected.Surname, _selected.Firstname, _selected.Secondname, _selected.Date.ToShortDateString(), _selected.Gender, _selected.Adress);
+            return
+                $"surname='{_selected.Surname}' and firstname='{_selected.Firstname}' and secondname='{_selected.Secondname}' and date='{_selected.Date.ToShortDateString()}' and gender='{_selected.Gender}' and adress='{_selected.Adress}'";
         }
 
         private string ToAddValues()
         {
-            return string.Format("'{0}','{1}','{2}','{3}','{4}','{5}'",_selected.Surname, _selected.Firstname, _selected.Secondname, _selected.Date.ToShortDateString(), _selected.Gender, _selected.Adress);
+            return
+                $"'{_selected.Surname}','{_selected.Firstname}','{_selected.Secondname}','{_selected.Date.ToShortDateString()}','{_selected.Gender}','{_selected.Adress}'";
         }
 
         private bool CheckDate()
         {
-            return (Selected.Check());
+            return Selected.Check;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

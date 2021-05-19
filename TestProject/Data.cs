@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace TestProject
 {
-    class Data : INotifyPropertyChanged
+    internal class Data : INotifyPropertyChanged
     {
         private string _firstname;
         private string _surname;
@@ -15,68 +15,65 @@ namespace TestProject
 
         public string Firstname
         {
-            get { return _firstname; }
+            get => _firstname;
             set
             {
                 _firstname = value;
-                OnPropertyChanged("Firstname");
+                OnPropertyChanged();
             }
         }
 
         public string Surname
         {
-            get { return _surname; }
+            get => _surname;
             set
             {
                 _surname = value;
-                OnPropertyChanged("Surname");
+                OnPropertyChanged();
             }
         }
 
         public string Secondname
         {
-            get { return _secondname; }
+            get => _secondname;
             set
             {
                 _secondname = value;
-                OnPropertyChanged("Secondname");
+                OnPropertyChanged();
             }
         }
 
         public DateTime Date
         {
-            get { return _date; }
+            get => _date;
             set
             {
                 _date = value;
-                OnPropertyChanged("Date");
+                OnPropertyChanged();
             }
         }
 
         public string Gender
         {
-            get { return _gender; }
+            get => _gender;
             set
             {
                 _gender = value;
-                OnPropertyChanged("Gender");
+                OnPropertyChanged();
             }
         }
 
         public string Adress
         {
-            get { return _adress; }
+            get => _adress;
             set
             {
                 _adress = value;
-                OnPropertyChanged("Adress");
+                OnPropertyChanged();
             }
         }
 
-        public bool Check()
-        {
-            return (Adress != null && Gender != null && Date != null && Secondname != null && Firstname != null && Surname != null);
-        }
+        public bool Check => Adress != null && Gender != null && Secondname != null && Firstname != null && Surname != null;
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
